@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Comment" representedClassName="Comment" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAtAsDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="object_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner_firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner_lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner_profilePicture" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="owner_profilePictureSquare" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Post" inverseName="comments" inverseEntity="Post" syncable="YES"/>
+    </entity>
+    <entity name="Post" representedClassName="Post" syncable="YES">
+        <attribute name="createdTimestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdTimestampAsDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="object_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner_firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner_lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner_profilePicture" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="owner_profilePictureSquare" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wine_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wine_origin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wine_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wine_year" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="post" inverseEntity="Comment" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="createdAtAsString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_first" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_last" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="object_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profile_picture" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Comment" positionX="-36" positionY="81" width="128" height="178"/>
+        <element name="Post" positionX="-261" positionY="-46" width="128" height="270"/>
+        <element name="User" positionX="-144" positionY="90" width="128" height="163"/>
+    </elements>
+</model>
